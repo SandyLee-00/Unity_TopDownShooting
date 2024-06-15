@@ -12,5 +12,5 @@ public class RangedAttackSO : AttackSO
     public float spread;
     public int numberOfProjectilesPerShot;
     public float multipleProjectilesAngle;
-    public Color projecileColor;
+    public Color projectileColor;
 }

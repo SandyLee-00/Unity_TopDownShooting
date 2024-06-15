@@ -89,7 +89,7 @@ public class ProjectileController : MonoBehaviour
         UpdateProjectileSprite();
         trailRenderer.Clear();
         currentDuration = 0;
-        spriteRenderer.color = attackData.projecileColor;
+        spriteRenderer.color = attackData.projectileColor;
 
         transform.right = this.direction;
     }
@@ -98,7 +98,13 @@ public class ProjectileController : MonoBehaviour
     {
         if (createFx)
         {
-            // TODO : 파티클 이펙트 생성, 무기 NameTag에 맞는 fx 생성
+            ParticleSystem particleSystem = GameManager.Instance.EffectParticle;
+            particleSystem.transform.position = position;
+            ParticleSystem.EmissionModule emission = particleSystem.emission;
+            emission.SetBurst(0, new ParticleSystem.Burst(0, Mathf.Ceil(attackData.size * 5)));
+            ParticleSystem.MainModule mainModule = particleSystem.main;
+            mainModule.startSpeedMultiplier = attackData.size * 10;
+            particleSystem.Play();
         }
 
         gameObject.SetActive(false);

@@ -32,6 +32,8 @@ public class TopDownController : MonoBehaviour
 
     private void HandleAttackDelay()
     {
+        if (stats.CurrentStat.attackSO == null) Debug.LogError($"{gameObject.name} TopDownController::AttackSO() is null");
+
         if(timeSinceLastAttack < stats.CurrentStat.attackSO.delay)
         {
             timeSinceLastAttack += Time.deltaTime;

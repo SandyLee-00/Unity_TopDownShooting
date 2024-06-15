@@ -7,7 +7,7 @@ using UnityEngine;
 public enum StatsChangeType
 {
     Add = 0,
-    Muliple,
+    Multiple,
     Override
 }
 
@@ -18,7 +18,7 @@ public enum StatsChangeType
 public class CharacterStat
 {
     public StatsChangeType statsChangeType;
-    [Range(1, 100)] public int maxHeath;
-    [Range(1f, 20f)] public int speed;
+    [Range(0, 100)] public int maxHealth;
+    [Range(0f, 20f)] public float speed;
     public AttackSO attackSO;
 }

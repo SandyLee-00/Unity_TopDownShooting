@@ -5,6 +5,7 @@ public class HealthSystem : MonoBehaviour
 {
     [SerializeField]
     private float healthChangeDelay = 0.5f;
+    [SerializeField] private AudioClip damageClip;
 
     private CharacterStatHandler statHandlers;
     private float timeSinceLastChange = float.MaxValue;
@@ -17,7 +18,7 @@ public class HealthSystem : MonoBehaviour
 
     public float CurrentHealth { get; private set; }
 
-    public float MaxHealth => statHandlers.CurrentStat.maxHeath;
+    public float MaxHealth => statHandlers.CurrentStat.maxHealth;
 
     private void Awake()
     {
@@ -46,6 +47,11 @@ public class HealthSystem : MonoBehaviour
 
     public bool ChangeHealth(float change)
     {
+        if (CurrentHealth == 0)
+        {
+            return false;
+        }
+
         if(timeSinceLastChange < healthChangeDelay)
         {
             return false;
@@ -68,6 +74,7 @@ public class HealthSystem : MonoBehaviour
         {
             OnDamage?.Invoke();
             isAttacked = true;
+            if (damageClip) SoundManager.PlayClip(damageClip);
         }
 
         return true;

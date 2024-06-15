@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class DustParticleControl : MonoBehaviour
 {
-    [SerializeField] private bool createDustOnWalk = true;
-    [SerializeField] private ParticleSystem dustParticleSystem;
+    private bool createDustOnWalk = true;
+    private ParticleSystem dustParticleSystem;
+
+    private void Awake()
+    {
+        dustParticleSystem = GetComponentInChildren<ParticleSystem>();
+    }
 
     public void CreateDustParticles()
     {

@@ -29,6 +29,10 @@ public class GameManager : MonoBehaviour
     public int CurrentWaveIndex => currentWaveIndex;
     public event Action OnWaveChanged;
 
+    [Header("CoinController")]
+    [SerializeField] private CoinController coin;
+    public CoinController Coin => coin;
+
 
     [SerializeField] private CharacterStat defaultStats;
     [SerializeField] private CharacterStat rangedStats;

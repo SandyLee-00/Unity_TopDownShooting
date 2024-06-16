@@ -142,8 +142,8 @@ public class PlayerBaseState : IState
     /// <summary>
     /// 애니메이션 
     /// </summary>
-    /// <param name="animator"></param>
-    /// <param name="tag"></param>
+    /// <param prefabName="animator"></param>
+    /// <param prefabName="tag"></param>
     /// <returns></returns>
     protected float GetNormalizedTime(Animator animator, string tag)
     {

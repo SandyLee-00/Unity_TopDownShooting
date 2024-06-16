@@ -21,14 +21,14 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     public @PlayerInputs()
     {
         asset = InputActionAsset.FromJson(@"{
-    ""name"": ""PlayerInputs"",
+    ""prefabName"": ""PlayerInputs"",
     ""maps"": [
         {
-            ""name"": ""Player"",
+            ""prefabName"": ""Player"",
             ""id"": ""604456ae-e1ba-4be5-bf8f-0f259bce5b56"",
             ""actions"": [
                 {
-                    ""name"": ""Movement"",
+                    ""prefabName"": ""Movement"",
                     ""type"": ""Value"",
                     ""id"": ""47ae41ad-bc7a-4929-bfdb-7fead7ee64c2"",
                     ""expectedControlType"": ""Vector2"",
@@ -37,7 +37,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Look"",
+                    ""prefabName"": ""Look"",
                     ""type"": ""Value"",
                     ""id"": ""2e304570-2a3f-4a1e-9d58-ca2a0bb6c225"",
                     ""expectedControlType"": ""Delta"",
@@ -46,7 +46,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Run"",
+                    ""prefabName"": ""Run"",
                     ""type"": ""Button"",
                     ""id"": ""66d35f49-1526-421b-9736-476f0b6b230d"",
                     ""expectedControlType"": ""Button"",
@@ -55,7 +55,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Attack"",
+                    ""prefabName"": ""Attack"",
                     ""type"": ""Button"",
                     ""id"": ""5f3fdc86-342a-4198-bf19-9aab17ded4a9"",
                     ""expectedControlType"": ""Button"",
@@ -64,7 +64,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Jump"",
+                    ""prefabName"": ""Jump"",
                     ""type"": ""Button"",
                     ""id"": ""bdb19875-d028-4410-9c45-9dc96586847b"",
                     ""expectedControlType"": ""Button"",
@@ -75,7 +75,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": ""2D Vector"",
+                    ""prefabName"": ""2D Vector"",
                     ""id"": ""2e0f07eb-7977-492e-8777-4704119c60a7"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
@@ -86,7 +86,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""up"",
+                    ""prefabName"": ""up"",
                     ""id"": ""efd68ff9-9a2b-41af-b9ae-d0f952a2e415"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
@@ -97,7 +97,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""down"",
+                    ""prefabName"": ""down"",
                     ""id"": ""0b56ba25-97a9-4851-98ed-8faf6820036b"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
@@ -108,7 +108,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""left"",
+                    ""prefabName"": ""left"",
                     ""id"": ""adfcce70-e4e7-4e64-9222-d2d89b51e5ae"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
@@ -119,7 +119,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""right"",
+                    ""prefabName"": ""right"",
                     ""id"": ""aba73097-1b7e-4831-a410-b42ee147a50e"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
@@ -130,7 +130,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": """",
+                    ""prefabName"": """",
                     ""id"": ""00c0d955-badc-4bac-ad74-f9d5a0c3196c"",
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
@@ -141,7 +141,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
+                    ""prefabName"": """",
                     ""id"": ""5acb2139-6f94-450c-b3e7-db973c11906c"",
                     ""path"": ""<Keyboard>/leftShift"",
                     ""interactions"": """",
@@ -152,7 +152,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
+                    ""prefabName"": """",
                     ""id"": ""b4c15fac-8156-4e3e-9532-5510346f0b75"",
                     ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
@@ -163,7 +163,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
+                    ""prefabName"": """",
                     ""id"": ""fc97ca79-7f3c-4b48-9e07-68b9d69a6e5c"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
@@ -174,7 +174,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
+                    ""prefabName"": """",
                     ""id"": ""c9ede877-fcdd-465a-80e9-d180ab91dc14"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
@@ -189,7 +189,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     ],
     ""controlSchemes"": [
         {
-            ""name"": ""New control scheme"",
+            ""prefabName"": ""New control scheme"",
             ""bindingGroup"": ""New control scheme"",
             ""devices"": [
                 {

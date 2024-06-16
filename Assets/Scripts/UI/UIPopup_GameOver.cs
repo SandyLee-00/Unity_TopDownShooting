@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/// <summary>
+/// 게임 오버 팝업
+/// </summary>
 public class UIPopup_GameOver : MonoBehaviour
 {
     [SerializeField] private Button Retry_Button;
@@ -25,5 +28,19 @@ public class UIPopup_GameOver : MonoBehaviour
             Application.Quit();
 #endif
         });
+    }
+
+    private void Start()
+    {
+        HealthSystem playerHealthSystem = GameManager.Instance.Player.GetComponent<HealthSystem>();
+        playerHealthSystem.OnDeath += GameOver;
+
+        gameObject.SetActive(false);
+    }
+
+    private void GameOver()
+    {
+        gameObject.SetActive(true);
+        StopAllCoroutines();
     }
 }

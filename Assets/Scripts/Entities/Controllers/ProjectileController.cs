@@ -96,7 +96,8 @@ public class ProjectileController : MonoBehaviour
 
     private void DestroyProjectile(Vector3 position, bool createFx)
     {
-        if (createFx)
+        // TODO : ParticleSystem GameManager 에서 분리하기
+        /*if (createFx)
         {
             ParticleSystem particleSystem = GameManager.Instance.EffectParticle;
             particleSystem.transform.position = position;
@@ -105,7 +106,7 @@ public class ProjectileController : MonoBehaviour
             ParticleSystem.MainModule mainModule = particleSystem.main;
             mainModule.startSpeedMultiplier = attackData.size * 10;
             particleSystem.Play();
-        }
+        }*/
 
         gameObject.SetActive(false);
     }

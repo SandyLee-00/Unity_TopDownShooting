@@ -6,18 +6,18 @@
 public class DestoryOnDeath : MonoBehaviour
 {
     private HealthSystem healthSystem;
-    private Rigidbody2D rb;
+    private Rigidbody2D _rigidbody;
 
     private void Start()
     {
         healthSystem = GetComponent<HealthSystem>();
         healthSystem.OnDeath += OnDeath;
-        rb = GetComponent<Rigidbody2D>();
+        _rigidbody = GetComponent<Rigidbody2D>();
     }
 
     private void OnDeath()
     {
-        rb.velocity = Vector2.zero;
+        _rigidbody.velocity = Vector2.zero;
         foreach (SpriteRenderer spriteRenderer in GetComponentsInChildren<SpriteRenderer>())
         {
             Color color = spriteRenderer.color;

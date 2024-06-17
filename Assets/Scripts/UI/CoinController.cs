@@ -2,13 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ScottGarland;
 
-public class CoinData
-{
-    public int Value;
-    public int PerClickValue;
-    public int PerAutoClickValue;
-}
+
 
 /// <summary>
 /// 클릭 이벤트를 받아 코인을 증가시키는 컨트롤러
@@ -16,17 +12,19 @@ public class CoinData
 /// </summary>
 public class CoinController : MonoBehaviour
 {
-    private int value = 0;
-    private int perClickValue = 1;
-    private int perClickCost = 1;
-    private int perAutoClickValue = 1;
+    private BigInteger value = 0;
+    private BigInteger perClickValue = 1;
+    private BigInteger perClickCost = 1;
+    private BigInteger perAutoClickValue = 1;
+    private BigInteger perAutoClickCost = 1;
 
     [SerializeField] private UIScene_ClickHandler clickHandler;
 
-    public int Value => value;
-    public int PerClickValue => perClickValue;
-    public int PerClickCost => perClickCost;
-    public int PerAutoClickValue => perAutoClickValue;
+    public BigInteger Value => value;
+    public BigInteger PerClickValue => perClickValue;
+    public BigInteger PerClickCost => perClickCost;
+    public BigInteger PerAutoClickValue => perAutoClickValue;
+    public BigInteger PerAutoClickCost => perAutoClickCost;
 
     public event Action OnCoinChanged;
 
@@ -63,6 +61,16 @@ public class CoinController : MonoBehaviour
             value -= perClickCost;
             perClickValue++;
             perClickCost *= 2;
+        }
+    }
+
+    public void UpgradePerAutoClick()
+    {
+        if (value >= perAutoClickCost)
+        {
+            value -= perAutoClickCost;
+            perAutoClickValue++;
+            perAutoClickCost *= 2;
         }
     }
 
